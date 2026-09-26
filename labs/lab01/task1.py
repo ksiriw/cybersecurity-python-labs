@@ -2,25 +2,21 @@ import random
 import sys
 import os
 
-# Підключаємо твої персональні дані з файлу student.py
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../')))
 from shared.student import STUDENT_NAME, VARIANT_NUMBER
 
-# Вхідні дані Варіанту 1
 passwords = ["password123", "Qwerty!2023", "admin", "MyP@ssword", "123456",
              "SecurePass!", "test", "P@ssword123", "welcome", "StrongP@ss1"]
 criteria = {"min_length": 8, "require_digits": True, "require_upper": True, "require_special": True}
 forbidden_passwords = {"password", "123456", "admin", "test", "welcome", "qwerty"}
 
 def analyze_passwords():
-    # Генерація 3 випадкових індексів і додавання дублікатів
     random_indices = [random.randint(0, len(passwords) - 1) for _ in range(3)]
     for idx in random_indices:
         passwords.append(passwords[idx])
 
     print(f"Аналіз паролів для: {STUDENT_NAME} (Варіант {VARIANT_NUMBER})")
     
-    # Оцінка надійності кожного пароля
     for pwd in passwords:
         is_forbidden = pwd.lower() in forbidden_passwords or len(pwd) < criteria["min_length"]
         
@@ -47,3 +43,7 @@ def analyze_passwords():
 
 if __name__ == "__main__":
     analyze_passwords()
+    
+    
+    
+    

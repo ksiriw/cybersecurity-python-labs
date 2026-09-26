@@ -19,17 +19,14 @@ security_levels = ("Public", "Internal", "Confidential", "Secret")
 blocked_users = {"contractor99", "temp_user", "suspended_acc"}
 
 def check_access():
-    # Вивід списку ресурсів із текстовою назвою рівня
     print("СИСТЕМА КОНТРОЛЮ ДОСТУПУ")
     print("Список ресурсів:")
     for res_name, res_level in resources:
         level_name = security_levels[res_level - 1]
         print(f"- {res_name} (Рівень: {level_name})")
 
-    # Додаємо тестових користувачів (існуючих + заблокованого + неіснуючого)
     test_users = list(users.keys()) + ["temp_user", "unknown_hacker"]
     
-    # Перевірка доступу кожного користувача до кожного ресурсу
     for user in test_users:
         for res_name, res_level in resources:
             if user not in users:
@@ -47,3 +44,5 @@ def check_access():
 
 if __name__ == "__main__":
     check_access()
+    
+    
