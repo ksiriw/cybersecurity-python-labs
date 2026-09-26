@@ -1,9 +1,9 @@
-import hashlib
 import csv
+import datetime
+import hashlib
 import json
 import os
 import sys
-import datetime
 from functools import wraps
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../')))
@@ -151,7 +151,7 @@ def main():
         print(f"Критична помилка: Файл не знайдено - {e}")
     except PermissionError as e:
         print(f"Критична помилка: Немає прав доступу - {e}")
-    except IOError as e:
+    except OSError as e:
         print(f"Критична помилка вводу/виводу - {e}")
     except Exception as e:
         print(f"Невідома критична помилка - {e}")
