@@ -1,0 +1,55 @@
+{
+    "total_entries": 68,
+    "top_error_ips": [
+        {
+            "ip": "203.0.113.99",
+            "total_errors": 18,
+            "details": {
+                "401": 2,
+                "400": 4,
+                "404": 9,
+                "403": 2,
+                "500": 1
+            }
+        },
+        {
+            "ip": "192.0.2.11",
+            "total_errors": 7,
+            "details": {
+                "401": 3,
+                "500": 1,
+                "400": 2,
+                "404": 1
+            }
+        },
+        {
+            "ip": "192.0.2.10",
+            "total_errors": 4,
+            "details": {
+                "500": 2,
+                "403": 1,
+                "400": 1
+            }
+        }
+    ],
+    "detected_attacks": [
+        {
+            "ip": "203.0.113.99",
+            "attack_type": "Directory Traversal",
+            "uri": "/../../etc/passwd",
+            "raw": "203.0.113.99 - - [27/Sep/2026:18:34:00 +0300] \"GET /../../etc/passwd HTTP/1.1\" 404 900"
+        },
+        {
+            "ip": "203.0.113.99",
+            "attack_type": "Directory Traversal",
+            "uri": "/download?file=../../../etc/shadow",
+            "raw": "203.0.113.99 - - [27/Sep/2026:18:36:00 +0300] \"GET /download?file=../../../etc/shadow HTTP/1.1\" 400 950"
+        },
+        {
+            "ip": "203.0.113.99",
+            "attack_type": "XSS",
+            "uri": "/search?q=<script>alert(1)</script>",
+            "raw": "203.0.113.99 - - [27/Sep/2026:18:38:00 +0300] \"GET /search?q=<script>alert(1)</script> HTTP/1.1\" 403 1000"
+        }
+    ]
+}
