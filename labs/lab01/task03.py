@@ -47,10 +47,12 @@ def log_event(func):
         except Exception as e:
             status = "error"
             error_msg = str(e)
-            raise 
+            raise
         finally:
             log_entry = {
-                "timestamp": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d %H:%M:%S"),
+                "timestamp": datetime.datetime.now(datetime.timezone.utc).strftime(
+                    "%Y-%m-%d %H:%M:%S"
+                ),
                 "username": username,
                 "action": "login_attempt",
                 "status": status,
@@ -171,4 +173,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

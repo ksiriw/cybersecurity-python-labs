@@ -194,5 +194,33 @@
         "action": "login_attempt",
         "status": "error",
         "error": "Логін або пароль не можуть бути порожніми."
+    },
+    {
+        "timestamp": "2026-10-05 09:33:10",
+        "username": "oksana",
+        "action": "login_attempt",
+        "status": "success",
+        "error": ""
+    },
+    {
+        "timestamp": "2026-10-05 09:33:10",
+        "username": "admin",
+        "action": "login_attempt",
+        "status": "failed",
+        "error": ""
+    },
+    {
+        "timestamp": "2026-10-05 09:33:10",
+        "username": "unknown",
+        "action": "login_attempt",
+        "status": "failed",
+        "error": ""
+    },
+    {
+        "timestamp": "2026-10-05 09:33:10",
+        "username": "dev",
+        "action": "login_attempt",
+        "status": "error",
+        "error": "Логін або пароль не можуть бути порожніми."
     }
 ]
